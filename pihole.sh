@@ -11,7 +11,7 @@ echo "IP: ${IP} - IPv6: ${IPv6}"
 docker run -d \
     --name pihole \
     -p 53:53/tcp -p 53:53/udp -p 80:80 \
-    --network dev \
+    --network devnet \
     -v "${DOCKER_CONFIGS}/pihole/pihole/:/etc/pihole/" \
     -v "${DOCKER_CONFIGS}/pihole/dnsmasq.d/:/etc/dnsmasq.d/" \
     -e ServerIP="${IP:-$(ip route get 9.9.9.9 | awk '{ print $NF; exit }')}" \

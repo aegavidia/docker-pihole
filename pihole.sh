@@ -9,7 +9,7 @@ echo "IP: ${IP} - IPv6: ${IPv6}"
 
 # Default ports + daemonized docker container
 docker run -d \
-    --name pihole \
+    --name pihole01 \
     -p 53:53/tcp -p 53:53/udp -p 80:80 \
     --network devnet \
     -v "${DOCKER_CONFIGS}/pihole/pihole/:/etc/pihole/" \
